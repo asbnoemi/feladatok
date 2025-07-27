@@ -1,0 +1,133 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'adatb'#225'zis'
+  ClientHeight = 441
+  ClientWidth = 624
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 80
+    Width = 385
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'KULCS'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NEV'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'SZUL_DATUM'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ANYJA_NEVE'
+        Width = 100
+        Visible = True
+      end>
+  end
+  object DeletBT: TButton
+    Left = 32
+    Top = 224
+    Width = 75
+    Height = 25
+    Caption = 'DeletBT'
+    TabOrder = 1
+    OnClick = DeletBTClick
+  end
+  object Button2: TButton
+    Left = 144
+    Top = 224
+    Width = 75
+    Height = 25
+    Caption = 'InsertBT'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object IBDatabase1: TIBDatabase
+    Connected = True
+    DatabaseName = 'D:\melo\qest3\PARTNER.IB'
+    Params.Strings = (
+      'user_name=sysdba')
+    DefaultTransaction = IBTransaction1
+    ServerType = 'IBServer'
+    Left = 32
+    Top = 8
+  end
+  object IBTable1: TIBTable
+    Database = IBDatabase1
+    BeforePost = IBTable1BeforePost
+    Active = True
+    BufferChunks = 1000
+    CachedUpdates = False
+    FieldDefs = <
+      item
+        Name = 'KULCS'
+        Attributes = [faRequired]
+        DataType = ftInteger
+      end
+      item
+        Name = 'NEV'
+        Attributes = [faRequired]
+        DataType = ftWideString
+        Size = 100
+      end
+      item
+        Name = 'SZUL_DATUM'
+        Attributes = [faRequired]
+        DataType = ftDate
+      end
+      item
+        Name = 'ANYJA_NEVE'
+        Attributes = [faRequired]
+        DataType = ftWideString
+        Size = 100
+      end>
+    IndexDefs = <
+      item
+        Name = 'RDB$PRIMARY1'
+        Fields = 'KULCS'
+        Options = [ixPrimary, ixUnique]
+      end>
+    StoreDefs = True
+    TableName = 'PARTNER'
+    PrecommittedReads = False
+    UniDirectional = False
+    Left = 80
+    Top = 8
+  end
+  object DataSource1: TDataSource
+    DataSet = IBTable1
+    Left = 136
+    Top = 8
+  end
+  object IBTransaction1: TIBTransaction
+    Active = True
+    DefaultDatabase = IBDatabase1
+    Left = 192
+    Top = 8
+  end
+end
