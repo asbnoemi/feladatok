@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'adatb'#225'zis'
-  ClientHeight = 383
-  ClientWidth = 470
+  ClientHeight = 375
+  ClientWidth = 468
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -50,7 +50,6 @@ object Form1: TForm1
     TitleFont.Style = []
     Columns = <
       item
-        Alignment = taLeftJustify
         Expanded = False
         FieldName = 'KULCS'
         Width = 50
@@ -77,8 +76,8 @@ object Form1: TForm1
   end
   object ToolBar1: TToolBar
     Left = 0
-    Top = 354
-    Width = 470
+    Top = 346
+    Width = 468
     Height = 29
     Align = alBottom
     Caption = 'ToolBar1'
@@ -88,8 +87,6 @@ object Form1: TForm1
     HotTrackColor = clAqua
     ParentColor = False
     TabOrder = 1
-    ExplicitTop = 461
-    ExplicitWidth = 517
     object ujBT: TButton
       Left = 0
       Top = 0
@@ -173,8 +170,7 @@ object Form1: TForm1
     TabOrder = 4
   end
   object IBDatabase1: TIBDatabase
-    Connected = True
-    DatabaseName = 'D:\melo\qest3\PARTNER.IB'
+    DatabaseName = 'D:\melo\feladatok\qest3\PARTNER.IB'
     Params.Strings = (
       'user_name=sysdba')
     DefaultTransaction = IBTransaction1
@@ -187,7 +183,6 @@ object Form1: TForm1
     Transaction = IBTransaction1
     FieldOptions.UpdatePersistent = True
     BeforePost = IBTable1BeforePost
-    Active = True
     BufferChunks = 1000
     CachedUpdates = False
     FieldDefs = <
@@ -232,7 +227,6 @@ object Form1: TForm1
     Top = 8
   end
   object IBTransaction1: TIBTransaction
-    Active = True
     DefaultDatabase = IBDatabase1
     Left = 192
     Top = 8
